@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "keywords": [],
   "author": "",
@@ -14,9 +16,12 @@
     "react-dom": "^19.2.0"
   },
   "devDependencies": {
+    "@storybook/react-vite": "^10.0.2",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
+    "prop-types": "^15.8.1",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "storybook": "^10.0.2"
   }
 }
