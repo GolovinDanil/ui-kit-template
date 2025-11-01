@@ -1,6 +1,6 @@
-import Button from './Button'
+import Button from "./Button";
 
-Button.displayName = 'Button'
+Button.displayName = "Button";
 
-export { type ButtonProps } from './Button'
-export { Button }
+export { type ButtonProps } from "./Button";
+export { Button };

@@ -18,15 +18,6 @@
     "rootDir": "src",
     "module": "ESNext"
   },
-  "include": [
-    "src",
-    "*.js",
-    "*.ts"
-  ],
-  "exclude": [
-    "lib",
-    "node_modules",
-    "**/*.stories.tsx",
-    "**/*.test.tsx"
-  ]
+  "include": ["src", "*.js", "*.ts"],
+  "exclude": ["lib", "node_modules", "**/*.stories.tsx", "**/*.test.tsx"]
 }

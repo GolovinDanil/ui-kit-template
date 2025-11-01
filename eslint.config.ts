@@ -13,29 +13,29 @@ export default defineConfig([
       globals: {
         ...globals.browser,
         ...globals.node,
-        require: "readonly"
-      }
-    }
+        require: "readonly",
+      },
+    },
   },
   tseslint.configs.recommended,
   {
     ...pluginReact.configs.flat.recommended,
     settings: {
       react: {
-        version: "detect"
-      }
-    }
+        version: "detect",
+      },
+    },
   },
   {
     files: ["**/*.config.js", "**/*.config.ts", "rollup.config.js"],
     rules: {
-      "@typescript-eslint/no-require-imports": "off"
-    }
+      "@typescript-eslint/no-require-imports": "off",
+    },
   },
   {
     files: ["**/*.{jsx,tsx}"],
     rules: {
-      "react/react-in-jsx-scope": "off"
-    }
-  }
+      "react/react-in-jsx-scope": "off",
+    },
+  },
 ]);

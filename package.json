@@ -14,7 +14,8 @@
     "build": "npm run clean && rollup -c --bundleConfigAsCjs",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "lint": "eslint"
+    "lint": "eslint",
+    "format": "prettier . --write"
   },
   "keywords": [
     "ui-kit",
@@ -41,6 +42,7 @@
     "globals": "^16.5.0",
     "jiti": "^2.6.1",
     "postcss": "^8.5.6",
+    "prettier": "^3.6.2",
     "prop-types": "^15.8.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",

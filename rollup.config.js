@@ -1,23 +1,23 @@
-import commonjs from '@rollup/plugin-commonjs'
-import resolve from '@rollup/plugin-node-resolve'
-import typescript from '@rollup/plugin-typescript'
-import postcss from 'rollup-plugin-postcss'
+import commonjs from "@rollup/plugin-commonjs";
+import resolve from "@rollup/plugin-node-resolve";
+import typescript from "@rollup/plugin-typescript";
+import postcss from "rollup-plugin-postcss";
 
-const pkg = require('./package.json')
+const pkg = require("./package.json");
 
 const external = [
   ...(pkg.dependencies ? Object.keys(pkg.dependencies) : []),
   ...(pkg.devDependencies ? Object.keys(pkg.devDependencies) : []),
   ...(pkg.peerDependencies ? Object.keys(pkg.peerDependencies) : []),
-]
+];
 
 const baseOutput = {
-  dir: 'lib',
+  dir: "lib",
   sourcemap: true,
-  exports: 'named',
+  exports: "named",
   preserveModules: true,
-  preserveModulesRoot: 'src',
-}
+  preserveModulesRoot: "src",
+};
 
 const plugins = [
   postcss({
@@ -27,32 +27,32 @@ const plugins = [
     inject: false,
   }),
   resolve({
-    extensions: ['.ts', '.tsx', '.js', '.jsx']
+    extensions: [".ts", ".tsx", ".js", ".jsx"],
   }),
   commonjs(),
   typescript({
-    outDir: 'lib',
-    declarationDir: 'lib',
+    outDir: "lib",
+    declarationDir: "lib",
     declaration: true,
-    rootDir: 'src'
+    rootDir: "src",
   }),
-]
+];
 
 export default [
   {
-    input: ['src/index.ts'],
+    input: ["src/index.ts"],
     output: [
       {
         ...baseOutput,
-        format: 'esm',
+        format: "esm",
       },
       {
         ...baseOutput,
-        format: 'cjs',
-        entryFileNames: '[name].cjs',
+        format: "cjs",
+        entryFileNames: "[name].cjs",
       },
     ],
     external,
     plugins,
   },
-]
+];
