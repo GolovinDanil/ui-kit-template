@@ -16,7 +16,8 @@
     "declaration": true,
     "outDir": "lib",
     "rootDir": "src",
-    "module": "ESNext"
+    "module": "ESNext",
+    "types": ["jest", "@testing-library/jest-dom"]
   },
   "include": ["src", "*.js", "*.ts"],
   "exclude": ["lib", "node_modules", "**/*.stories.tsx", "**/*.test.tsx"]
