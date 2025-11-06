@@ -15,8 +15,6 @@ const baseOutput = {
   dir: "lib",
   sourcemap: true,
   exports: "named",
-  preserveModules: true,
-  preserveModulesRoot: "src",
 };
 
 const plugins = [

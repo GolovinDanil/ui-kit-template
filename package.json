@@ -1,30 +1,27 @@
 {
-  "name": "ui-kit-article",
+  "name": "ui-kit-template",
   "version": "1.0.0",
-  "description": "",
-  "main": "lib/index.cjs",
-  "module": "lib/index.js",
-  "typings": "lib/index.d.ts",
-  "style": "lib/index.css",
+  "main": "index.cjs",
+  "module": "index.js",
+  "typings": "index.d.ts",
+  "style": "index.css",
   "files": [
-    "lib"
+    "*.js",
+    "*.cjs",
+    "*.d.ts",
+    "*.css",
+    "*.map"
   ],
   "scripts": {
-    "clean": "rm -rf lib",
+    "clean": "rm -rf dist lib",
     "build": "npm run clean && rollup -c --bundleConfigAsCjs",
+    "pack": "npm run build && mkdir -p dist && cp -r lib/* dist/ && cp package.json dist/ && cd dist && npm pack && mv *.tgz ../ && cd .. && rm -rf dist",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "lint": "eslint",
     "format": "prettier . --write",
     "test": "jest"
   },
-  "keywords": [
-    "ui-kit",
-    "react",
-    "rollup"
-  ],
-  "author": "Danil Golovin <destpb@gmail.com>",
-  "license": "ISC",
   "peerDependencies": {
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
@@ -33,12 +30,12 @@
     "@babel/preset-env": "^7.28.5",
     "@babel/preset-react": "^7.28.5",
     "@babel/preset-typescript": "^7.28.5",
-    "@eslint/js": "^9.39.0",
+    "@eslint/js": "^9.39.1",
     "@rollup/plugin-commonjs": "^29.0.0",
     "@rollup/plugin-node-resolve": "^16.0.3",
     "@rollup/plugin-typescript": "^12.3.0",
-    "@storybook/react": "^10.0.2",
-    "@storybook/react-vite": "^10.0.2",
+    "@storybook/react": "^10.0.5",
+    "@storybook/react-vite": "^10.0.5",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.0",
@@ -46,7 +43,7 @@
     "@types/jest": "^30.0.0",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
-    "eslint": "^9.39.0",
+    "eslint": "^9.39.1",
     "eslint-plugin-react": "^7.37.5",
     "globals": "^16.5.0",
     "identity-obj-proxy": "^3.0.0",
@@ -55,14 +52,12 @@
     "jiti": "^2.6.1",
     "postcss": "^8.5.6",
     "prettier": "^3.6.2",
-    "prop-types": "^15.8.1",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
+    "react": "*",
+    "react-dom": "*",
     "rollup": "^4.52.5",
     "rollup-plugin-postcss": "^4.0.2",
-    "storybook": "^10.0.2",
-    "ts-jest": "^29.4.5",
+    "storybook": "^10.0.5",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.46.2"
+    "typescript-eslint": "^8.46.3"
   }
 }
